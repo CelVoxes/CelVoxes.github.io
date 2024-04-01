@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celvox - The Voice of Cells</title>
     <style>
+        html {
+            height: 100%;
+        }
         body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin: 0;
             font-family: Arial, sans-serif;
             background-color: #0a0a0a;
             color: #fff;
             text-align: center;
+        }
+        .content {
+            flex: 1;
             padding: 50px;
-            margin: 0;
+            padding-bottom: 0; /* No padding at the bottom, the footer will take care of this space */
         }
         img {
-            max-width: 100%; /* Set to 100% of its container */
+            max-width: 100%;
             height: auto;
-            display: block; /* Ensures no extra space around the image element */
-            margin: 0 auto 50px; /* Center align image and add space below */
-            max-height: 70vh; /* This will make the logo use 70% of the viewport height */
+            max-height: 70vh;
+            margin-bottom: 50px;
         }
         h1 {
             color: #fff;
@@ -27,13 +36,15 @@
             color: #bbb;
         }
         footer {
-            margin-top: 50px;
             color: #666;
+            padding: 20px 0; /* Add some padding inside the footer */
         }
     </style>
 </head>
 <body>
-    <img src="public/logo.png" alt="Celvox - The Voice of Cells" >
+    <div class="content">
+        <img src="public/logo.png" alt="Celvox - The Voice of Cells">
+    </div>
     <footer>
         &copy; 2024 Celvox. All rights reserved.
     </footer>
