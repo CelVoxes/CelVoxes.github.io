@@ -12,12 +12,13 @@
             text-align: center;
             padding: 50px;
             margin: 0;
-            overflow: hidden; /* Hide scrollbars */
         }
         img {
-            max-width: 80%;
+            max-width: 100%; /* Set to 100% of its container */
             height: auto;
-            margin-top: 50px;
+            display: block; /* Ensures no extra space around the image element */
+            margin: 0 auto 50px; /* Center align image and add space below */
+            max-height: 70vh; /* This will make the logo use 70% of the viewport height */
         }
         h1 {
             color: #fff;
@@ -32,7 +33,7 @@
     </style>
 </head>
 <body>
-    <img src="public/logo.png" alt="Celvox - The Voice of Cells" width="40%">
+    <img src="public/logo.png" alt="Celvox - The Voice of Cells" >
     <footer>
         &copy; 2024 Celvox. All rights reserved.
     </footer>
