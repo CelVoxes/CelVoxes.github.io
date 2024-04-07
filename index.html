@@ -1,52 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 <head>
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celvox - The Voice of Cells</title>
-    <style>
-        html {
-            height: 100%;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0a0a0a;
-            color: #fff;
-            text-align: center;
-        }
-        .content {
-            flex: 1;
-            padding: 50px;
-            padding-bottom: 0; /* No padding at the bottom, the footer will take care of this space */
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            max-height: 70vh;
-            margin-bottom: 50px;
-        }
-        h1 {
-            color: #fff;
-        }
-        p {
-            color: #bbb;
-        }
-        footer {
-            color: #666;
-            padding: 20px 0; /* Add some padding inside the footer */
-        }
-    </style>
 </head>
 <body>
     <div class="content">
         <img src="public/logo.png" alt="Celvox - The Voice of Cells">
     </div>
+      
+    <div class="wrapper-buttons">
+        <a href="blog/TCC/index.html" class="button-link">
+            <button class="white-button">Latest Blog Post</button>
+        </a>
+    </div>
+    
+    <div class="wrapper-buttons">
+        <a href="https://discord.gg/X7strFxxkz" class="button-link">
+            <button class="blue-button">Join Discord</button>
+        </a>
+    </div>
 
-    <a style="text-decoration: none; color: #a0a0a0; font-size: 1.2em;" href="blog/TCC/index.html">Latest Blog Post</a>
+
     <footer>
         &copy; 2024 Celvox. All rights reserved.
     </footer>
