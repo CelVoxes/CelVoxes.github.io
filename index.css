@@ -42,7 +42,10 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 250px;
+    width: 130px;
+    display: flex; /* Use Flexbox to line items up in a row */
+    justify-content: space-around; /* Spreads the buttons evenly with space around them */
+    align-items: center; /* Vertically centers the buttons if their heights are different*/
 }
 
 .wrapper-buttons > * {
@@ -57,37 +60,55 @@ footer {
     margin-bottom: 0px;
 }
 
-.white-button,
-.blue-button {
+.button-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits the color from the parent, useful if changing button colors */
+}
+
+
+/* .white-button {
     display: inline-block;
     font-family: Whitney, "Open Sans", Helvetica, sans-serif;
     font-weight: 400;
     font-size: 11pt;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
     height: 45px;
-    width: 250px;
+    width: 300px;
     background: transparent;
-    margin-bottom: 5px;
+    color: #fff;
+    margin-bottom: 10px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
-}
-
-.blue-button {
-    
-    border: 2px solid #7289da;
-    color: #7289da;
-}
+    font-size: large;
+}*/
 
 .white-button {
-    background-color: #fff;
-    border: 2px solid #fff;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 45px;
+    width: 300px;
+    background: linear-gradient(to right, #ffffff 50%, #0a0a0a 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #fff;
+    line-height: 0px; /* Set line-height equal to the button's height for vertical centering */    
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease; /* Enhanced for a smoother transition */
+}
+
+.white-button:hover {
+    background-position: left bottom;
     color: #000;
 }
 
-.blue-button:hover,
-.white-button:hover{
-    transform: translateY(1px);
-}
+
 
 .blue-button:active,
 .white-button:active{
