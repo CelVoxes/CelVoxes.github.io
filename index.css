@@ -90,7 +90,7 @@ footer {
     border-radius: 10px;
     cursor: pointer;
     height: 45px;
-    width: 300px;
+    width: 250px;
     background: linear-gradient(to right, #ffffff 50%, #0a0a0a 50%);
     background-size: 200% 100%;
     background-position: right bottom;
@@ -100,7 +100,7 @@ footer {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     padding: 30px;
     text-align: center;
-    transition: all 0.3s ease; /* Enhanced for a smoother transition */
+    transition: all 1s ease; /* Enhanced for a smoother transition */
 }
 
 .white-button:hover {
