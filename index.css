@@ -46,6 +46,7 @@ footer {
     display: flex; /* Use Flexbox to line items up in a row */
     justify-content: space-around; /* Spreads the buttons evenly with space around them */
     align-items: center; /* Vertically centers the buttons if their heights are different*/
+    text-align: center;
 }
 
 .wrapper-buttons > * {
