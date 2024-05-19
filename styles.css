@@ -41,6 +41,10 @@ h1 {
     margin-bottom: 20px; /* Added */
 }
 
+h5{
+    color: rgba(255,255,255,.5)
+}
+
 footer {
     color: #666;
     padding: 20px 0; /* Add some padding inside the footer */
@@ -124,7 +128,6 @@ footer {
     max-width: 350px;
     overflow: hidden;
     position: relative;
-    margin-top: 20px;
     /* background-color: #f1f1f1; Optional: Add a background color for the logo strip */
 }
 
@@ -158,9 +161,10 @@ footer {
 /* Form Styles */
 #contact-form {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 100 auto;
+    min-width: 350px;
     text-align: left;
-    background: #f9f9f9;
+    background: #0a0a0a;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -175,6 +179,8 @@ footer {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
+    background-color: #0a0a0a;
+    color: white;
     border: 1px solid #ccc;
     box-sizing: border-box;
     transition: border-color 0.3s, box-shadow 0.3s;
