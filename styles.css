@@ -1,0 +1,190 @@
+html {
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    text-align: center;
+    padding-top: 60px; /* Adjust this value based on the navbar height */
+}
+.content {
+    flex: 1;
+    display: flex; /* Add display flex to the content container */
+    flex-direction: column; /* Set flex direction to column */
+    align-items: center; /* Horizontally center content */
+    padding: 50px;
+    padding-bottom: 0; /* No padding at the bottom, the footer will take care of this space */
+}
+
+p {
+    color: #bbb;
+    line-height: 1.6; /* Increase line height for better readability */
+    margin-bottom: 20px; /* Add some space below each paragraph */
+    text-align: center; 
+    max-width: 350px;
+    font-size: 1.2em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70vh;
+}
+h1 {
+    color: #fff;
+    margin-bottom: 20px; /* Added */
+}
+
+footer {
+    color: #666;
+    padding: 20px 0; /* Add some padding inside the footer */
+}
+
+
+.logo {
+    margin-right: 10px; /* Added */
+}
+
+
+/* Custom Navbar Background Color */
+.custom-navbar {
+    background-color: #0a0a0a;
+}
+
+.discord-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+.wrapper-buttons {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 130px;
+    display: flex; /* Use Flexbox to line items up in a row */
+    justify-content: space-around; /* Spreads the buttons evenly with space around them */
+    align-items: center; /* Vertically centers the buttons if their heights are different*/
+    text-align: center;
+}
+.wrapper-buttons > * {
+    margin-bottom: 10px;
+}
+.wrapper-buttons > *:first-child {
+    margin-top: 10px;
+}
+.wrapper-buttons > *:last-child {
+    margin-bottom: 0px;
+}
+.button-link {
+    text-decoration: none; /* Removes underline from links */
+    color: rgba(255, 255, 255, 0.5) /* Inherits the color from the parent, useful if changing button colors */
+}
+
+.white-button {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 45px;
+    width: 250px;
+    background: linear-gradient(to right, #ffffff 50%, #0a0a0a 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #fff;
+    line-height: 0px; /* Set line-height equal to the button's height for vertical centering */    
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    transition: all 1s ease; /* Enhanced for a smoother transition */
+}
+.white-button:hover {
+    background-position: left bottom;
+    color: #000;
+}
+.blue-button:active,
+.white-button:active {
+    transform: translateY(2px);
+}
+.blue-button,
+.white-button {
+    outline: transparent !important;
+}
+
+.logo-strip {
+    max-width: 350px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    /* background-color: #f1f1f1; Optional: Add a background color for the logo strip */
+}
+
+.logo-strip-inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    animation: scroll 20s linear infinite;
+}
+
+.logo-strip-inner img {
+    margin: 0 20px;
+    max-height: 100px; /* Maintain aspect ratio */
+    height: auto; /* Ensure the height adjusts automatically */
+    width: auto; /* Ensure the width adjusts automatically */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-300%);
+    }
+}
+
+/* Contact Form */
+/* Form Styles */
+
+/* Form Styles */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
