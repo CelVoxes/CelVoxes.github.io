@@ -125,6 +125,7 @@ footer {
     max-width: 350px;
     overflow: hidden;
     position: relative;
+    border-radius: 5px;
     /* background-color: #f1f1f1; Optional: Add a background color for the logo strip */
 }
 
@@ -134,6 +135,7 @@ footer {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    max-height: 50px;
     animation: scroll 20s linear infinite;
 }
 
