@@ -1,13 +1,13 @@
-html {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
+html body{
     height: 100%;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-body {
+    font-family: 'Open Sans', sans-serif; /* Apply Open Sans font to the entire site */
     display: flex;
     flex-direction: column;
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
     background-color: #0a0a0a;
     color: #fff;
     text-align: center;
@@ -90,7 +90,6 @@ footer {
 
 .white-button {
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: large;
     border-radius: 10px;
@@ -193,6 +192,7 @@ textarea.form-control {
 }
 
 /* Solution Card */
+
 /* Solutions Grid Styles */
 .solutions-grid {
     display: flex;
@@ -207,18 +207,31 @@ textarea.form-control {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    width: calc(33% - 40px);
+    text-align: center; /* Center text horizontally */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center content horizontally */
+    min-height: 200px; /* Ensure a minimum height for better centering */
 }
 
-.solution-card h4 {
+.solution-card h3, .solution-card h4 {
     margin-top: 0;
     color: #555;
+    flex-shrink: 0; /* Prevent headers from shrinking */
 }
 
 .solution-card p {
     color: #555;
+    flex-grow: 1; /* Allow paragraph to grow and take up remaining space */
+    display: flex;
+    align-items: center; /* Center text vertically within the paragraph */
+    justify-content: center; /* Center text horizontally within the paragraph */
+    margin-bottom: 0;
 }
+
 /* Media Queries */
 @media (max-width: 992px) {
     .solution-card {
