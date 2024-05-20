@@ -19,6 +19,7 @@ body {
     flex-direction: column; /* Set flex direction to column */
     align-items: center; /* Horizontally center content */
     padding: 50px;
+    padding-top: 5px; 
     padding-bottom: 0; /* No padding at the bottom, the footer will take care of this space */
 }
 
@@ -121,6 +122,7 @@ footer {
 }
 
 .logo-strip {
+    background-color: white;
     max-width: 350px;
     overflow: hidden;
     position: relative;
@@ -128,6 +130,7 @@ footer {
 }
 
 .logo-strip-inner {
+    padding: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -147,7 +150,7 @@ footer {
         transform: translateX(100%);
     }
     100% {
-        transform: translateX(-300%);
+        transform: translateX(-350%);
     }
 }
 
