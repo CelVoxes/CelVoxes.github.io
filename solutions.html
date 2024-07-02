@@ -11,26 +11,58 @@
 </head>
 <body>
     <div id="navbar"></div>
-    <div class="content">
-        <h3>Our Solutions</h3>
-        <p>At Celvox, we offer a range of solutions to help scientists and clinicians make informed decisions. Explore our solutions below.</p>
+    <div class="content container mt-5">
+       
+        <blockquote cite="https://pubmed.ncbi.nlm.nih.gov/22186258/">
+            <p>We need merely to assume that changes in the genotype produce correlated changes in the adult phenotype, but the mechanism of this correlation need not concern us.</p>
+            <footer>—C.H. Waddington, <cite>The Epigenotype</cite>, 1942</footer>
+        </blockquote>
 
-        <div class="solutions-grid">
-            <div class="solution-card">
-                <h4>Single Cell Analysis</h4>
-                <p>From raw files to state-of-the-art analysis of single-cell sequencing data unraveling intricacies of cellular heterogeneity.</p>
-            </div>
-            <div class="solution-card">
-                <h4>Long-read Sequencing</h4>
-                <p>Providing comprehensive long-read RNA sequencing solutions to uncover full-length transcript isoforms and improve genome annotations.</p>
-            </div>
-            <div class="solution-card">
-                <h4>Bulk RNA Sequencing</h4>
-                <p>Delivering robust and scalable bulk RNA sequencing services for high-throughput transcriptome profiling and differential expression analysis.</p>
-            </div>
-            <!-- Add more solution cards as needed -->
+        <hr>
+        <p>After decades of work, we now know how phenotype and genotype are connected: <strong>Genes</strong>. Thousands of genes act together, creating networks (or circuits) to define how a phenotype occurs in any cell. </p>
+        <p>Single-cell technologies allows us to analyze these genes and annotate each cell individually. However, high-quality cell annotation requires technical competency and extensive labour.</p> 
+        <p>Automated annotation pipelines give simple confidency scores of cell type annotations, but no explanation on <i>why</i> these cells are annotated as such. Therefore, hard to reach techinal expertise is still required.</p>
+        <hr>
+        <h5>Introducing ceLLama</h5>
+        <hr>
+        <img src="public/cellama.png" alt="A llama working on cell type identification." style="max-width: 350px;">        
+        <hr>
+        <p> <i>ceLLama</i> is an open-source streamlined automation pipeline for cell type annotations using local Large Language Models (LLMs). This cutting-edge tool is crafted to streamline and enhance the process of cell type identification, making it faster, more comprehensive, and more reliable.</p>
+        <hr>        
+        
+        <a href="https://github.com/eonurk/ceLLama" class="button-link">
+            <button class="white-button">Try ceLLama Now</button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        
+        <div class="feature-item">
+            <h5><i class="fas fa-shield-alt" style="color: #aaa;"></i> Privacy</h5>
+            <p>ceLLama operates entirely on your local machine, ensuring that your sensitive data remains secure and free from potential leaks. This feature is particularly crucial in fields where data privacy is of utmost importance, such as biomedical research and healthcare.</p>
+        </div> <hr>
+        <div class="feature-item">
+            <h5><i class="fas fa-dna" style="color: #aaa;"></i> Comprehensive Analysis</h5>
+            <p>Unlike traditional methods, ceLLama takes into account not only the positive markers but also the negative genes, providing a more holistic and accurate cell type annotation. This comprehensive approach ensures that the annotations are precise and reflective of the actual cell types present.</p>
+        </div><hr>
+        <div class="feature-item">
+            <h5><i class="fas fa-file-alt" style="color: #aaa;"></i> Extensive Reporting</h5>
+            <p>ceLLama generates detailed and customized reports that provide insights into the annotation process and results. These reports are tailored to meet the specific needs of the user, ensuring that the information presented is both relevant and useful.</p>
+        </div><hr>
+        <div class="feature-item">
+            <h5><i class="fas fa-tachometer-alt" style="color: #aaa;"></i> Speed</h5>
+            <p>The pipeline is optimized for efficient processing, allowing researchers to obtain results quickly without compromising on accuracy. This speed is particularly beneficial in high-throughput settings where time is a critical factor.</p>
+        </div>
+
+        <div class="disclaimer mt-5" style="font-size: 0.7rem; color: #555;">
+            <p>Important: While ceLLama is designed to provide accurate annotations, Large Language Models are not infallible. We recommend double-checking critical information to ensure its accuracy.</p>
+            <p>This project is licensed under the CC BY-NC 4.0 License, allowing for use with attribution and for non-commercial purposes. For more details, visit the <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #17a2b8;">license page</a>.</p>
         </div>
     </div>
+
+
+    
+
     <div id="footer"></div>
 
     <script src="loadCommon.js"></script>
