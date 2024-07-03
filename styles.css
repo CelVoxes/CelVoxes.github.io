@@ -279,14 +279,15 @@ blockquote p::after {
 /* Custom styles for the table */
 
 .price-container{
-    max-width: 350px;
     text-align: center;
+    max-width: 350px;
 }
 .table-responsive {
     margin-top: 20px;
     background: #fff  ;
     border-radius: 10px;
     vertical-align: middle;
+    min-width: 350px;
 }
 
 .table-bordered td{
