@@ -284,15 +284,17 @@ blockquote p::after {
 }
 .table-responsive {
     margin-top: 20px;
-    background-color: #fff  ;
+    background: #fff  ;
     border-radius: 10px;
-    
+    vertical-align: middle;
 }
 
 .table-bordered td{
     vertical-align: middle;
+    background: #fff  ;
 }
 
 .table-bordered th{
     vertical-align: middle;
+    background: #fff  ;
 }
