@@ -275,3 +275,24 @@ blockquote p::before {
 blockquote p::after {
     content: '\201D';
 }
+
+/* Custom styles for the table */
+
+.price-container{
+    max-width: 350px;
+    text-align: center;
+}
+.table-responsive {
+    margin-top: 20px;
+    background-color: #fff  ;
+    border-radius: 10px;
+    
+}
+
+.table-bordered td{
+    vertical-align: middle;
+}
+
+.table-bordered th{
+    vertical-align: middle;
+}
