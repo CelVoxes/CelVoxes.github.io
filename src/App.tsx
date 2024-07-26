@@ -11,7 +11,7 @@ import { BlogPage } from "@/pages/Blog";
 function App() {
 	return (
 		<>
-			<Router basename="/celvox-site">
+			<Router basename="">
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />

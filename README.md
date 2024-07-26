@@ -10,5 +10,5 @@ I think we will learn the answer soon.
 
 ### TO-DO
 
-- [ ] Add blog site
+- [x] Add blog site
 - [ ] UI fixes
