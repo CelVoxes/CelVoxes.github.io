@@ -36,8 +36,8 @@ export function ContactFormDemo() {
 	const form = useForm<z.infer<typeof FormSchema>>({
 		resolver: zodResolver(FormSchema),
 		defaultValues: {
-			Name: "",
 			Email: "",
+			Name: "",
 			Message: "",
 		},
 	});
@@ -46,10 +46,8 @@ export function ContactFormDemo() {
 		try {
 			const response = await fetch(
 				"https://script.google.com/macros/s/AKfycbzxeBsJleJL_ogBwqjfFAnttd4jt4nGLb5rRBUtv5UrJUKytXPRKozMnBldqhhQ74PE/exec",
-
 				{
 					method: "POST",
-					mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json",
 					},
