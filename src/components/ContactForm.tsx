@@ -44,6 +44,7 @@ export function ContactFormDemo() {
 		try {
 			const response = await fetch(
 				"https://script.google.com/macros/s/AKfycbxUVRtZlOusMMHw-B076NRY0mapwcWGwgKP_naDoVlEYc_NC2TO6mNEKdYtvNNHNPSwcg/exec",
+
 				{
 					method: "POST",
 					headers: {
@@ -54,9 +55,8 @@ export function ContactFormDemo() {
 			);
 
 			const result = await response.json();
-			console.log("HERE:");
-			console.log(result);
-			if (result.result === "success") {
+
+			if (result.ok === "success") {
 				toast({
 					title: "Success!",
 					description: "Your message has been sent.",
@@ -73,7 +73,9 @@ export function ContactFormDemo() {
 			toast({
 				title: "Error!",
 				variant: "destructive",
-				description: `There was a problem submitting your form: ${error.message}`,
+				description: `There was a problem submitting your form: ${
+					(error as Error).message
+				}`,
 			});
 		}
 	}
