@@ -40,23 +40,28 @@ export function ContactFormDemo() {
 		},
 	});
 
-	async function onSubmit(data: z.infer<typeof FormSchema>) {
+	async function onSubmit(
+		data:
+			| string
+			| string[][]
+			| Record<string, string>
+			| URLSearchParams
+			| undefined
+	) {
 		try {
+			const params = new URLSearchParams(data).toString();
 			const response = await fetch(
-				"https://script.google.com/macros/s/AKfycbxUVRtZlOusMMHw-B076NRY0mapwcWGwgKP_naDoVlEYc_NC2TO6mNEKdYtvNNHNPSwcg/exec",
+				`https://script.google.com/macros/s/AKfycbwneoM8x6g-Ehsd1J8j-pcYXy2CNXX4vJtX9rVKGe2GNAETgtJSdENRwhYzogIVrZk23g/exec?${params}`,
 
 				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(data),
+					method: "GET",
+					redirect: "follow",
 				}
 			);
 
 			const result = await response.json();
 
-			if (result.ok === "success") {
+			if (result.result === "success") {
 				toast({
 					title: "Success!",
 					description: "Your message has been sent.",
@@ -66,7 +71,7 @@ export function ContactFormDemo() {
 				toast({
 					title: "Error!",
 					variant: "destructive",
-					description: `There was a problem submitting your form: ${result.error}`,
+					description: `There was a problem submitting your form.`,
 				});
 			}
 		} catch (error) {
