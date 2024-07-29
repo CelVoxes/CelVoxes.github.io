@@ -2,7 +2,9 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { boolean, z } from "zod";
+
+import { ReloadIcon } from "@radix-ui/react-icons";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { useState } from "react";
 
 const FormSchema = z.object({
 	Email: z.string().email({ message: "Invalid email address." }),
@@ -30,6 +33,7 @@ const FormSchema = z.object({
 
 export function ContactFormDemo() {
 	const { toast } = useToast();
+	const [buttonDisable, setButtonDisable] = useState(false);
 
 	const form = useForm<z.infer<typeof FormSchema>>({
 		resolver: zodResolver(FormSchema),
@@ -48,6 +52,8 @@ export function ContactFormDemo() {
 			| URLSearchParams
 			| undefined
 	) {
+		setButtonDisable(true);
+
 		try {
 			const params = new URLSearchParams(data).toString();
 			const response = await fetch(
@@ -82,6 +88,8 @@ export function ContactFormDemo() {
 					(error as Error).message
 				}`,
 			});
+		} finally {
+			setButtonDisable(false);
 		}
 	}
 
@@ -131,9 +139,13 @@ export function ContactFormDemo() {
 					)}
 				/>
 				<Button
+					disabled={buttonDisable}
 					className="justify-center items-center px-16 py-6 mt-4"
 					type="submit"
 				>
+					{buttonDisable && (
+						<ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+					)}
 					Submit
 				</Button>
 			</form>
