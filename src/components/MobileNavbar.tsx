@@ -62,7 +62,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, toggleMenu }) => {
 						)}
 					</li>
 					<NavItem to="/contact" onClick={toggleMenu}>
-						Contacts
+						Contact
 					</NavItem>
 				</ul>
 			</nav>

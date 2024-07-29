@@ -19,7 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 
 const FormSchema = z.object({
-	Email: z.string().min(2, {
+	Email: z.string().email({ message: "Invalid email address." }).min(2, {
 		message: "Email must be at least 2 characters.",
 	}),
 
@@ -37,29 +37,49 @@ export function ContactFormDemo() {
 		resolver: zodResolver(FormSchema),
 		defaultValues: {
 			Name: "",
+			Email: "",
+			Message: "",
 		},
 	});
 
-	function onSubmit(data: z.infer<typeof FormSchema>) {
-		toast({
-			title: "You submitted the following values:",
-			description: (
-				<pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-					<code className="text-white">{JSON.stringify(data, null, 2)}</code>
-				</pre>
-			),
-		});
+	async function onSubmit(data: z.infer<typeof FormSchema>) {
+		try {
+			const response = await fetch(
+				"https://script.google.com/macros/s/AKfycbwl6qs6d6GXLPY_ezYdnguUoJHPjHj4y5hRM90_fNNI1AMMDv-8Cn0lFJwstBg7R1tMjg/exec",
+
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(data),
+				}
+			);
+
+			if (response.ok) {
+				toast({
+					title: "Success!",
+					description: "Your message has been sent.",
+				});
+				form.reset();
+			} else {
+				toast({
+					title: "Error!",
+					description: "There was a problem submitting your form.",
+				});
+			}
+		} catch (error) {
+			toast({
+				title: "Error!",
+				description: "There was a problem submitting your form.",
+			});
+		}
 	}
 
 	return (
 		<Form {...form}>
 			{/* Connected to google sheet. */}
-			<form
-				onSubmit={form.handleSubmit(onSubmit)}
-				className="w-full space-y-4"
-				method="POST"
-				action="https://script.google.com/macros/s/AKfycbwl6qs6d6GXLPY_ezYdnguUoJHPjHj4y5hRM90_fNNI1AMMDv-8Cn0lFJwstBg7R1tMjg/exec"
-			>
+			<form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
 				<FormField
 					control={form.control}
 					name="Email"
@@ -69,7 +89,6 @@ export function ContactFormDemo() {
 							<FormControl>
 								<Input type="email" placeholder="" {...field} />
 							</FormControl>
-							{/* <FormDescription></FormDescription> */}
 							<FormMessage />
 						</FormItem>
 					)}
@@ -83,7 +102,6 @@ export function ContactFormDemo() {
 							<FormControl>
 								<Input placeholder="" {...field} />
 							</FormControl>
-							{/* <FormDescription></FormDescription> */}
 							<FormMessage />
 						</FormItem>
 					)}
