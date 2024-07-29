@@ -45,7 +45,7 @@ export function ContactFormDemo() {
 	async function onSubmit(data: z.infer<typeof FormSchema>) {
 		try {
 			const response = await fetch(
-				"https://script.google.com/macros/s/AKfycbzxeBsJleJL_ogBwqjfFAnttd4jt4nGLb5rRBUtv5UrJUKytXPRKozMnBldqhhQ74PE/exec",
+				"https://script.google.com/macros/s/AKfycbx2zLYfZjsH43z-VWrUX2teXbZhi9GbU6LDSTWPbUs-BhNNV1f6k0l6FuO3DIiMl_vP/exec",
 				{
 					method: "POST",
 					headers: {
