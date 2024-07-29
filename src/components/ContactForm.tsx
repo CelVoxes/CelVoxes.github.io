@@ -48,6 +48,7 @@ export function ContactFormDemo() {
 				"https://script.google.com/macros/s/AKfycbxUVRtZlOusMMHw-B076NRY0mapwcWGwgKP_naDoVlEYc_NC2TO6mNEKdYtvNNHNPSwcg/exec",
 				{
 					method: "POST",
+					mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json",
 					},
