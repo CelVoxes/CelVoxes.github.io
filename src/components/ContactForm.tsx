@@ -16,23 +16,21 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 
 const FormSchema = z.object({
-	Email: z.string().email({ message: "Invalid email address." }).min(2, {
-		message: "Email must be at least 2 characters.",
-	}),
-
+	Email: z.string().email({ message: "Invalid email address." }),
 	Name: z.string().min(2, {
 		message: "Name must be at least 2 characters.",
 	}),
-
 	Message: z.string().min(10, {
 		message: "Description must be at least 10 characters.",
 	}),
 });
 
 export function ContactFormDemo() {
+	const { toast } = useToast();
+
 	const form = useForm<z.infer<typeof FormSchema>>({
 		resolver: zodResolver(FormSchema),
 		defaultValues: {
@@ -48,7 +46,6 @@ export function ContactFormDemo() {
 				"https://script.google.com/macros/s/AKfycbxUVRtZlOusMMHw-B076NRY0mapwcWGwgKP_naDoVlEYc_NC2TO6mNEKdYtvNNHNPSwcg/exec",
 				{
 					method: "POST",
-					mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json",
 					},
@@ -56,7 +53,10 @@ export function ContactFormDemo() {
 				}
 			);
 
-			if (response.ok) {
+			const result = await response.json();
+			console.log("HERE:");
+			console.log(result);
+			if (result.result === "success") {
 				toast({
 					title: "Success!",
 					description: "Your message has been sent.",
@@ -65,20 +65,21 @@ export function ContactFormDemo() {
 			} else {
 				toast({
 					title: "Error!",
-					description: "There was a problem submitting your form.",
+					variant: "destructive",
+					description: `There was a problem submitting your form: ${result.error}`,
 				});
 			}
 		} catch (error) {
 			toast({
 				title: "Error!",
-				description: "There was a problem submitting your form.",
+				variant: "destructive",
+				description: `There was a problem submitting your form: ${error.message}`,
 			});
 		}
 	}
 
 	return (
 		<Form {...form}>
-			{/* Connected to google sheet. */}
 			<form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
 				<FormField
 					control={form.control}
@@ -106,7 +107,6 @@ export function ContactFormDemo() {
 						</FormItem>
 					)}
 				/>
-
 				<FormField
 					control={form.control}
 					name="Message"

@@ -7,10 +7,12 @@ import { About } from "@/pages/About";
 import { Contact } from "@/pages/Contact";
 import { Cellama } from "@/pages/solutions/Cellama";
 import { BlogPage } from "@/pages/Blog";
+import { Toaster } from "@/components/ui/toaster";
 
 function App() {
 	return (
 		<>
+			<Toaster />
 			<Router basename="">
 				<Routes>
 					<Route path="/" element={<Home />} />
