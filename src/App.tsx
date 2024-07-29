@@ -13,7 +13,7 @@ function App() {
 	return (
 		<>
 			<Toaster />
-			<Router basename="">
+			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
