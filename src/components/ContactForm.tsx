@@ -45,10 +45,11 @@ export function ContactFormDemo() {
 	async function onSubmit(data: z.infer<typeof FormSchema>) {
 		try {
 			const response = await fetch(
-				"https://script.google.com/macros/s/AKfycbwl6qs6d6GXLPY_ezYdnguUoJHPjHj4y5hRM90_fNNI1AMMDv-8Cn0lFJwstBg7R1tMjg/exec",
+				"https://script.google.com/macros/s/AKfycbzxeBsJleJL_ogBwqjfFAnttd4jt4nGLb5rRBUtv5UrJUKytXPRKozMnBldqhhQ74PE/exec",
 
 				{
 					method: "POST",
+					mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json",
 					},
