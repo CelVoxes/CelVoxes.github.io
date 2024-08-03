@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/Footer";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SubscribeForm from "@/components/Subscription";
 
 export function Home() {
 	return (
@@ -28,6 +29,12 @@ export function Home() {
 					</div>
 				</div>
 			</div>
+
+			<Separator />
+			<div className="h-[20rem] flex justify-center items-center px-4 bg-neutral-100">
+				<SubscribeForm />
+			</div>
+
 			<SiteFooter />
 		</>
 	);
