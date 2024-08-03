@@ -1,25 +1,22 @@
-import React from "react";
-
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { ReloadIcon } from "@radix-ui/react-icons";
-import { FormDescription } from "@/components/ui/form";
 
 function SubscribeForm() {
 	const { toast } = useToast();
 	const [buttonDisable, setButtonDisable] = useState(false);
 
-	const handleSubmit = async (event: {
-		preventDefault: () => void;
-		target: HTMLFormElement | undefined;
-	}) => {
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault(); // Prevent default form submission
 
 		setButtonDisable(true);
 
-		const formData = new FormData(event.target); // Collect form data
-		const formDataEntries = Object.fromEntries(formData.entries());
+		const formData = new FormData(event.currentTarget); // Collect form data
+		const formDataEntries: Record<string, string> = {};
+		formData.forEach((value, key) => {
+			formDataEntries[key] = value.toString();
+		});
 		try {
 			const params = new URLSearchParams(formDataEntries).toString();
 			const response = await fetch(
